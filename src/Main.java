@@ -1,22 +1,20 @@
 import Models.User;
 import Utils.IO;
 
+import java.util.ArrayList;
+
 
 public class Main {
     public static void main(String[] args) throws Exception {
 
         Users users = new Users();
+        users.currentUser = null;
 
-        User user = new User("Mamal", "m.ranjbar", "m.ranjbar80@gmail.com", "Mohamad", "0023998611", "09906768372");
-        User user2 = new User("Mamal", "m.ranjbar", "m.ranjbar80@gmail.com", "Mohamad", "0023998611", "09906768372");
+        User user = new User("Mamal", "m.ranjbar", "m.ranjbar80@gmail.com", "mamal", "0023998611", "09906768372");
 
-        users.addUser(user);
-//        users.addUser(user2);
+        //Test user
+        users.users.add(user);
 
-//        IO.print(users.getUsers().toString());
-
-//        Integer input = ;
-//        IO.print(input.toString());
 
         while (true) {
             try {
@@ -25,10 +23,12 @@ public class Main {
                         users.addUser(IO.printSignUpDialog());
                     }
                     case 2 -> {//sign in
-                        IO.print("in");
+                        users.signIn(IO.printSignInDialog());
                     }
 
-                    case 3 -> {//sign in
+
+
+                    case 3 -> {//log all users
                         IO.print(users.getUsers().toString());
                     }
                     default -> {

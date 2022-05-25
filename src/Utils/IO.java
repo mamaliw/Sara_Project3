@@ -1,11 +1,14 @@
 package Utils;
 
 import Models.User;
+//import Users;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class IO {
+
+
     public static void print(String text) {
         System.out.println("\n" + text);
     }
@@ -42,16 +45,26 @@ public class IO {
         return IO.getInputInt(dialog);
     }
 
-    public static User printSignUpDialog() {
+    public static ArrayList<String> printSignUpDialog() {
+        ArrayList<String> result = new ArrayList<>();
 
-        String name = IO.getInputString("Your name:");
-        String username = IO.getInputString("Your username:");
-        String email = IO.getInputString("Your email:");
-        String password = IO.getInputString("Your password:");
-        String nationalCode = IO.getInputString("Your nationalCode:");
-        String phoneNumber = IO.getInputString("Your phoneNumber:");
+        result.add(IO.getInputString("Your name:"));
+        result.add(IO.getInputString("Your username:"));
+        result.add(IO.getInputString("Your email:"));
+        result.add(IO.getInputString("Your password:"));
+        result.add(IO.getInputString("Your nationalCode:"));
+        result.add(IO.getInputString("Your phoneNumber:"));
 
-        return new User(name, username, email, password, nationalCode, phoneNumber);
+        return result;
+    }
+
+    public static ArrayList<String> printSignInDialog() {
+        ArrayList<String> result = new ArrayList<>();
+
+        result.add(IO.getInputString("Enter Your username:"));
+        result.add(IO.getInputString("Enter Your password:"));
+
+        return result;
     }
 
 

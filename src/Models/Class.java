@@ -17,5 +17,5 @@ public class Class {
     public Boolean isPrivate;
     public String password;
     public String description;
-    public User owner;
+    public User ownerUsername;
 }
